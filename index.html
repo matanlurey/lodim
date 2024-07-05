@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="lodim API docs, for the Dart programming language.">
+  <title>lodim - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">lodim package</li>
+  </ol>
+  <div class="self-name">lodim</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="lodim">lodim</h1>
+<p><em>Fast</em> and <em>pixel accurate</em> fixed-point 2D geometry without approximations.</p>
+<p><a href="https://github.com/matanlurey/lodim/actions/workflows/ci.yaml"><img src="https://github.com/matanlurey/lodim/actions/workflows/ci.yaml/badge.svg" alt="CI"></a>
+<a href="https://coveralls.io/github/matanlurey/lodim?branch=main"><img src="https://coveralls.io/repos/github/matanlurey/lodim/badge.svg?branch=main" alt="Coverage Status"></a>
+<a href="https://pub.dev/packages/lodim"><img src="https://img.shields.io/pub/v/lodim.svg" alt="Pub Package"></a>
+<a href="https://pub.dev/documentation/lodim/latest/"><img src="https://img.shields.io/badge/dartdoc-reference-blue.svg" alt="Dartdoc reference"></a></p>
+<p>Optimal for the following use cases:</p>
+<ul>
+<li>2D game development that uses tile-based or grid-based rendering.</li>
+<li>Graphic rendering of pixel art or other fixed-point rasterized graphics.</li>
+<li>Fixed-point geometry for performance or consistency reasons.</li>
+</ul>
+<h2 id="features">Features</h2>
+<p>Use <code>lodim</code> to quickly work with 2D geometry in a fixed-point space:</p>
+<ul>
+<li><strong>Fixed-point</strong>: All values and results are <em>always</em> integers.</li>
+<li><strong>Fast</strong>: AOT and JIT benchmarked on the Dart VM.</li>
+<li><strong>Pixel accurate</strong>: Minimal<code>^1</code> ambiguity or hidden rounding errors.</li>
+<li><strong>Ergonomics</strong>: Familiar API to <code>dart:ui</code> (and similar) for ease of use.</li>
+<li><strong>Cross-platform</strong>: Works on all Dart platforms, including Flutter and web.</li>
+</ul>
+<p><code>^1</code>: <code>lodim</code> does provide some algorithms that make approximations, such as
+      <code>&lt;Pos&gt;.lineTo</code>, which uses <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</a>.
+      However, all of these algorithms are cleanly defined and documented, and
+      allow user-defined overrides.</p>
+<h2 id="usage">Usage</h2>
+<p>Just add a dependency in your <code>pubspec.yaml</code> or run the following command:</p>
+<pre class="language-bash"><code class="language-bash">dart pub add lodim
+</code></pre>
+<p>If you've used another 2D geometry library, such as <a href="https://api.flutter.dev/flutter/dart-ui/dart-ui-library.html"><code>dart:ui</code></a> from
+Flutter, you will find <code>lodim</code> to be very similar. Work with similar types such
+as <code>Pos</code> (i.e. <code>Offset</code>) and <code>Rect</code>:</p>
+<pre class="language-dart"><code class="language-dart">// Creates a (x, y) position.
+final pos = Pos(10, 20);
+
+// Creates a rectangle.
+final rect = Rect.fromLTWH(0, 0, 100, 100);
+</code></pre>
+<p>Take advantage of tested and benchmarked common operations:</p>
+<pre class="language-dart"><code class="language-dart">// Rotate a position by 135 degrees counter-clockwise.
+final rotated = pos.rotate45(-3);
+
+// Get the intersection of two rectangles.
+final intersection = rect.intersect(a, b);
+</code></pre>
+<p>Use built-in algorithms for common tasks, or define your own:</p>
+<pre class="language-dart"><code class="language-dart">// Determine the distance between two positions.
+final distance = pos1.distanceTo(pos2);
+
+// Use another algorithm to determine the distance or define your own.
+final manhattan = pos1.distanceTo(pos2, using: manhattan);
+
+// Draw a line from one position to another.
+final line = pos1.lineTo(pos2);
+
+// Use your own algorithm to draw a line.
+final custom = pos1.lineTo(pos2, using: someOtherAlgorithm);
+</code></pre>
+<h2 id="benchmarks">Benchmarks</h2>
+<p>To run the benchmarks, run:</p>
+<pre class="language-shell"><code class="language-shell">dart run benchmark/benchmark.dart
+
+# Or, to use AOT:
+dart compile exe benchmark/benchmark.dart
+./benchmark/benchmark.exe
+
+# Or, to profile using devtools:
+dart run --pause-isolates-on-start --observe benchmark/benchmark.dart
+</code></pre>
+<p>In local benchmarks on a M2 Macbook Pro, compared to <code>^2</code> code.</p>
+<p><code>^2</code>: What users might write themselves, using <code>(int, int)</code> tuples or similar.</p>
+<p><strong>JIT</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th><code>lodim</code></th>
+<th>Baseline</th>
+<th>Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10k allocations positions</td>
+<td>479.8 us</td>
+<td>362.9 us</td>
+<td>-25%</td>
+</tr>
+<tr>
+<td>10k euclidian distance</td>
+<td>138.3 us</td>
+<td>153.5 us</td>
+<td>+11%</td>
+</tr>
+<tr>
+<td>10k rotations in 45° steps</td>
+<td>6875.8 us</td>
+<td>13658.7 us</td>
+<td>+98%</td>
+</tr>
+<tr>
+<td>10k lines drawn</td>
+<td>1340049.5</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AOT</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th><code>lodim</code></th>
+<th>Baseline</th>
+<th>Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10k allocations positions</td>
+<td>342.7 us</td>
+<td>463.9 us</td>
+<td>+35%</td>
+</tr>
+<tr>
+<td>10k euclidian distance</td>
+<td>139.7 us</td>
+<td>132.7 us</td>
+<td>-5%</td>
+</tr>
+<tr>
+<td>10k rotations in 45° steps</td>
+<td>5858.2 us</td>
+<td>11708.0 us</td>
+<td>+100%</td>
+</tr>
+<tr>
+<td>10k lines drawn</td>
+<td>1333651.0 us</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>tl;dr</strong>: <code>lodim</code> is <em>faster</em> than baseline code, using both JIT and AOT.
+Specializing based on fixed-point geometry allows for optimizations that are
+not possible with general-purpose code, such as jump-table based rotations.</p>
+<h2 id="contributing">Contributing</h2>
+<p>To run the tests, run:</p>
+<pre class="language-shell"><code class="language-shell">dart test
+</code></pre>
+<p>To check code coverage locally, run:</p>
+<pre class="language-shell"><code class="language-shell">dart tool/coverage.dart
+</code></pre>
+<p>To preview <code>dartdoc</code> output locally, run:</p>
+<pre class="language-shell"><code class="language-shell">dart tool/dartdoc.dart
+</code></pre>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="lodim">
+  <span class="name"><a href="lodim/lodim-library.html">lodim</a></span> 
+
+</dt>
+<dd><em>Fast</em> and <em>pixel accurate</em> fixed-point 2D geometry without approximations.
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">lodim package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">lodim</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="lodim/lodim-library.html">lodim</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lodim
+      0.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

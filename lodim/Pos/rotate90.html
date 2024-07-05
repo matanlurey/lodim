@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the rotate90 method from the Pos class, for the Dart programming language.">
+  <title>rotate90 method - Pos class - lodim library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">lodim</a></li>
+    <li><a href="../../lodim/lodim-library.html">lodim.dart</a></li>
+    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
+    <li class="self-crumb">rotate90 method</li>
+  </ol>
+  <div class="self-name">rotate90</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="lodim&#47;Pos-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">rotate90</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="../../lodim/Pos-class.html">Pos</a></span>
+<span class="name ">rotate90</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="rotate90-param-steps">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">steps</span> = <span class="default-value">1</span>]</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Returns this position rotated by 90 degrees <code>steps</code> times clockwise.</p>
+<p>The default is to rotate 90 degrees once, but you can rotate multiple
+times by providing a different number of <code>steps</code>, or counter-clockwise by
+providing a negative number of steps.</p>
+<p>A 90° rotation is a fixed-point rotation, i.e. it does not use floating
+point numbers or <code>π</code>, and is derived entirely from integer offsets.</p>
+<p>See <a href="../../lodim/Pos/rotate45.html">rotate45</a> for 45° rotations.</p>
+<h2 id="visualizing-the-rotations">Visualizing the rotations</h2>
+<p>Imagine the following original position, perhaps at <code>(3, 2)</code>:</p>
+<pre class="language-txt"><code class="language-txt">y
+^
+|
+|    *
+|
+O-----&gt; x
+</code></pre>
+<p>A 90° Clockwise <code>rotate90()</code> would move the position to <code>(2, -3)</code>:</p>
+<pre class="language-txt"><code class="language-txt">O-----&gt; x
+|
+|
+|  *
+v
+y
+</code></pre>
+<p>A 180° Clockwise <code>rotate90(2)</code> would move the position to <code>(-3, -2)</code>:</p>
+<pre class="language-txt"><code class="language-txt">x &lt;-----O
+        |
+   *    |
+        |
+        v
+        y
+</code></pre>
+<p>And finally, a 270° Clockwise <code>rotate90(-1)</code> is <code>(-2, 3)</code>:</p>
+<pre class="language-txt"><code class="language-txt">        y
+        ^
+     *  |
+        |
+        |
+x &lt;-----O
+</code></pre>
+<h2 id="example">Example</h2>
+<pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
+print(a.rotate90()); // =&gt; Pos(20, -10)
+print(a.rotate90(2)); // =&gt; Pos(-10, -20)
+print(a.rotate90(-1)); // =&gt; Pos(-20, 10)
+</code></pre>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Pos rotate90([int steps = 1]) {
+  return switch (steps % 4) {
+    0 =&gt; this,
+    1 =&gt; Pos(-y, x),
+    2 =&gt; Pos(-x, -y),
+    _ =&gt; Pos(y, -x),
+  };
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">lodim</a></li>
+    <li><a href="../../lodim/lodim-library.html">lodim</a></li>
+    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
+    <li class="self-crumb">rotate90 method</li>
+</ol>
+
+
+    <h5>Pos class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lodim
+      0.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
