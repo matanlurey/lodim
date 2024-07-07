@@ -68,7 +68,11 @@
 
     
 <section class="desc markdown">
-  <p>A function that returns positions along a line between two points.</p>
+  <p>A function that returns positions along a line between <code>start</code> and <code>end</code>.</p>
+<p>Optionally, the line function can be configured with an <code>exclusive</code> flag
+to either conditionally include or exclude the <code>end</code> position. This flag
+is optional, and algorithms may choose to ignore it, so check the specific
+implementation for details.</p>
 </section>
 
     
@@ -107,7 +111,7 @@
 <footer>
   <span class="no-break">
     lodim
-      0.1.0
+      0.1.1
   </span>
 
   

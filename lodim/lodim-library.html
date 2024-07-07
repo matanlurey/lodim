@@ -68,7 +68,7 @@
 
     
 <section class="desc markdown">
-  <p><em>Fast</em> and <em>pixel accurate</em> fixed-point 2D geometry without approximations.</p>
+  <p><em>Fast pixel accurate</em> fixed-point 2D geometry with minimum approximations.</p>
 <h2 id="usage">Usage</h2>
 <p>Most of the library is built around <a href="../lodim/Pos-class.html">Pos</a>, a fixed-point (integer-based) 2D
 vector class. It's used to represent positions, directions, distances, and
@@ -190,6 +190,23 @@ for (final edge in rect.edges) {
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="extensions">
+      <h2>Extensions</h2>
+
+      <dl>
+          <dt id="IntPair">
+  <span class="name "><a href="../lodim/IntPair.html">IntPair</a></span>
+  on (<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span></span>)
+  
+
+</dt>
+<dd>
+  Extension methods on <code>(int, int)</code> tuples for convenience.
+</dd>
+
+
+      </dl>
+    </section>
 
 
 
@@ -223,6 +240,32 @@ for (final edge in rect.edges) {
 
 </dd>
 
+          <dt id="diagonal" class="callable">
+  <span class="name"><a href="../lodim/diagonal.html">diagonal</a></span><span class="signature">(<wbr><span class="parameter" id="diagonal-param-a"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">a</span>, </span><span class="parameter" id="diagonal-param-b"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Calculates the diagonal (ordinal) distance between two positions.
+  
+
+</dd>
+
+          <dt id="euclideanApproximate" class="callable">
+  <span class="name"><a href="../lodim/euclideanApproximate.html">euclideanApproximate</a></span><span class="signature">(<wbr><span class="parameter" id="euclideanApproximate-param-a"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">a</span>, </span><span class="parameter" id="euclideanApproximate-param-b"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">b</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Calculates an <em>approximate</em> <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean</a> distance between two positions.
+  
+
+</dd>
+
           <dt id="euclideanSquared" class="callable">
   <span class="name"><a href="../lodim/euclideanSquared.html">euclideanSquared</a></span><span class="signature">(<wbr><span class="parameter" id="euclideanSquared-param-a"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">a</span>, </span><span class="parameter" id="euclideanSquared-param-b"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">b</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
@@ -231,7 +274,7 @@ for (final edge in rect.edges) {
 
 </dt>
 <dd>
-  Calculates the squared <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean</a> distance between two positions.
+  Calculates the <em>squared</em> <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean</a> distance between two positions.
   
 
 </dd>
@@ -245,6 +288,32 @@ for (final edge in rect.edges) {
 </dt>
 <dd>
   Calculates the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan</a> distance between two positions.
+  
+
+</dd>
+
+          <dt id="sqrtApproximate" class="callable">
+  <span class="name"><a href="../lodim/sqrtApproximate.html">sqrtApproximate</a></span><span class="signature">(<wbr><span class="parameter" id="sqrtApproximate-param-n"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">n</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns an approximation of the integer square root of <code>n</code>.
+  
+
+</dd>
+
+          <dt id="vectorLine" class="callable">
+  <span class="name"><a href="../lodim/vectorLine.html">vectorLine</a></span><span class="signature">(<wbr><span class="parameter" id="vectorLine-param-start"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="vectorLine-param-end"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">end</span>, </span><span class="parameter" id="vectorLine-param-exclusive">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Calculates positions along a line using a fast 2D vector algorithm.
   
 
 </dd>
@@ -279,7 +348,7 @@ for (final edge in rect.edges) {
 
   </dt>
   <dd>
-    A function that returns positions along a line between two points.
+    A function that returns positions along a line between <code>start</code> and <code>end</code>.
     
 
   </dd>
@@ -321,7 +390,7 @@ for (final edge in rect.edges) {
 <footer>
   <span class="no-break">
     lodim
-      0.1.0
+      0.1.1
   </span>
 
   
