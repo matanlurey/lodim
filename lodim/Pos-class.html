@@ -108,11 +108,25 @@
 
     <dl class="constructor-summary-list">
         <dt id="Pos" class="callable">
-          <span class="name"><a href="../lodim/Pos/Pos.html">Pos</a></span><span class="signature">(<span class="parameter" id="-param-x"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">x</span>, </span><span class="parameter" id="-param-y"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">y</span></span>)</span>
+          <span class="name"><a href="../lodim/Pos/Pos.html">Pos</a></span><span class="signature">(<span class="parameter" id="-param-x"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">x</span>, </span><span class="parameter" id="-param-y"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">y</span></span>)</span>
         </dt>
         <dd>
           Creates a new position with the given x and y offsets.
             <div class="constructor-modifier features">const</div>
+        </dd>
+        <dt id="Pos.floor" class="callable">
+          <span class="name"><a href="../lodim/Pos/Pos.floor.html">Pos.floor</a></span><span class="signature">(<span class="parameter" id="floor-param-dx"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/double-class.html">double</a></span> <span class="parameter-name">dx</span>, </span><span class="parameter" id="floor-param-dy"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/double-class.html">double</a></span> <span class="parameter-name">dy</span></span>)</span>
+        </dt>
+        <dd>
+          Creates a new position by flooring the given <code>dx</code> and <code>dy</code> values.
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="Pos.truncate" class="callable">
+          <span class="name"><a href="../lodim/Pos/Pos.truncate.html">Pos.truncate</a></span><span class="signature">(<span class="parameter" id="truncate-param-dx"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/double-class.html">double</a></span> <span class="parameter-name">dx</span>, </span><span class="parameter" id="truncate-param-dy"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/double-class.html">double</a></span> <span class="parameter-name">dy</span></span>)</span>
+        </dt>
+        <dd>
+          Creates a new position by truncating the given <code>dx</code> and <code>dy</code> values.
+            <div class="constructor-modifier features">factory</div>
         </dd>
     </dl>
   </section>
@@ -124,7 +138,7 @@
     <dl class="properties">
         <dt id="hashCode" class="property">
   <span class="name"><a href="../lodim/Pos/hashCode.html">hashCode</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>
   
 
 </dt>
@@ -147,8 +161,8 @@
 </dd>
 
         <dt id="runtimeType" class="property inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Object/runtimeType.html">runtimeType</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/Type-class.html">Type</a></span>
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.0/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/Type-class.html">Type</a></span>
   
 
 </dt>
@@ -160,7 +174,7 @@
 
         <dt id="x" class="property">
   <span class="name"><a href="../lodim/Pos/x.html">x</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>
   
 
 </dt>
@@ -170,9 +184,21 @@
 
 </dd>
 
+        <dt id="xy" class="property">
+  <span class="name"><a href="../lodim/Pos/xy.html">xy</a></span>
+  <span class="signature">&#8594; (<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span></span>)</span>
+  
+
+</dt>
+<dd>
+  <code>this</code> as a tuple of two integers.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
         <dt id="y" class="property">
   <span class="name"><a href="../lodim/Pos/y.html">y</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>
   
 
 </dt>
@@ -218,7 +244,7 @@
 
         <dt id="cross" class="callable">
   <span class="name"><a href="../lodim/Pos/cross.html">cross</a></span><span class="signature">(<wbr><span class="parameter" id="cross-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>
   </span>
   
 
@@ -230,8 +256,8 @@
 </dd>
 
         <dt id="distanceTo" class="callable">
-  <span class="name"><a href="../lodim/Pos/distanceTo.html">distanceTo</a></span><span class="signature">(<wbr><span class="parameter" id="distanceTo-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, </span><span class="parameter" id="distanceTo-param-using">{<span class="type-annotation"><a href="../lodim/Distance.html">Distance</a></span> <span class="parameter-name">using</span> = <span class="default-value">euclideanSquared</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+  <span class="name"><a href="../lodim/Pos/distanceTo.html">distanceTo</a></span><span class="signature">(<wbr><span class="parameter" id="distanceTo-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, {</span><span class="parameter" id="distanceTo-param-using"><span class="type-annotation"><a href="../lodim/Distance.html">Distance</a></span> <span class="parameter-name">using</span> = <span class="default-value">euclideanSquared</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>
   </span>
   
 
@@ -244,7 +270,7 @@
 
         <dt id="dot" class="callable">
   <span class="name"><a href="../lodim/Pos/dot.html">dot</a></span><span class="signature">(<wbr><span class="parameter" id="dot-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>
   </span>
   
 
@@ -269,14 +295,27 @@
 </dd>
 
         <dt id="lineTo" class="callable">
-  <span class="name"><a href="../lodim/Pos/lineTo.html">lineTo</a></span><span class="signature">(<wbr><span class="parameter" id="lineTo-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, </span><span class="parameter" id="lineTo-param-using">{<span class="type-annotation"><a href="../lodim/Line.html">Line</a></span> <span class="parameter-name">using</span> = <span class="default-value">bresenham</span>, </span><span class="parameter" id="lineTo-param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+  <span class="name"><a href="../lodim/Pos/lineTo.html">lineTo</a></span><span class="signature">(<wbr><span class="parameter" id="lineTo-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, {</span><span class="parameter" id="lineTo-param-using"><span class="type-annotation"><a href="../lodim/Line.html">Line</a></span> <span class="parameter-name">using</span> = <span class="default-value">bresenham</span>, </span><span class="parameter" id="lineTo-param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
   Returns an iterable of positions that draws a line from <code>this</code> to <code>other</code>.
+  
+
+</dd>
+
+        <dt id="map" class="callable">
+  <span class="name"><a href="../lodim/Pos/map.html">map</a></span><span class="signature">(<wbr><span class="parameter" id="map-param-map"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">map</span>(<span class="parameter" id="param-offset"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">offset</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a new position with the <code>map</code> function applied to each offset.
   
 
 </dd>
@@ -296,7 +335,7 @@
 
         <dt id="midpoints" class="callable">
   <span class="name"><a href="../lodim/Pos/midpoints.html">midpoints</a></span><span class="signature">(<wbr><span class="parameter" id="midpoints-param-other"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
   </span>
   
 
@@ -321,7 +360,7 @@
 </dd>
 
         <dt id="noSuchMethod" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.0/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
   </span>
   
@@ -334,7 +373,7 @@
 </dd>
 
         <dt id="pow" class="callable">
-  <span class="name"><a href="../lodim/Pos/pow.html">pow</a></span><span class="signature">(<wbr><span class="parameter" id="pow-param-exponent"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">exponent</span></span>)
+  <span class="name"><a href="../lodim/Pos/pow.html">pow</a></span><span class="signature">(<wbr><span class="parameter" id="pow-param-exponent"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">exponent</span></span>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -360,7 +399,7 @@
 </dd>
 
         <dt id="rotate45" class="callable">
-  <span class="name"><a href="../lodim/Pos/rotate45.html">rotate45</a></span><span class="signature">(<wbr><span class="parameter" id="rotate45-param-steps">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">steps</span> = <span class="default-value">1</span>]</span>)
+  <span class="name"><a href="../lodim/Pos/rotate45.html">rotate45</a></span><span class="signature">(<wbr>[<span class="parameter" id="rotate45-param-steps"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">steps</span> = <span class="default-value">1</span></span>])
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -373,7 +412,7 @@
 </dd>
 
         <dt id="rotate90" class="callable">
-  <span class="name"><a href="../lodim/Pos/rotate90.html">rotate90</a></span><span class="signature">(<wbr><span class="parameter" id="rotate90-param-steps">[<span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">steps</span> = <span class="default-value">1</span>]</span>)
+  <span class="name"><a href="../lodim/Pos/rotate90.html">rotate90</a></span><span class="signature">(<wbr>[<span class="parameter" id="rotate90-param-steps"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">steps</span> = <span class="default-value">1</span></span>])
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -398,6 +437,19 @@
 
 </dd>
 
+        <dt id="toList" class="callable">
+  <span class="name"><a href="../lodim/Pos/toList.html">toList</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns <code>this</code> as a list of two integers.
+  
+
+</dd>
+
         <dt id="toRect" class="callable">
   <span class="name"><a href="../lodim/Pos/toRect.html">toRect</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Rect-class.html">Rect</a></span>
@@ -413,7 +465,7 @@
 
         <dt id="toString" class="callable">
   <span class="name"><a href="../lodim/Pos/toString.html">toString</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/String-class.html">String</a></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/String-class.html">String</a></span>
   </span>
   
 
@@ -433,7 +485,7 @@
     <h2>Operators</h2>
     <dl class="callables">
         <dt id="operator %" class="callable">
-  <span class="name"><a href="../lodim/Pos/operator_modulo.html">operator %</a></span><span class="signature">(<wbr><span class="parameter" id="%-param-scalar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">scalar</span></span>)
+  <span class="name"><a href="../lodim/Pos/operator_modulo.html">operator %</a></span><span class="signature">(<wbr><span class="parameter" id="%-param-scalar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">scalar</span></span>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -459,7 +511,7 @@
 </dd>
 
         <dt id="operator *" class="callable">
-  <span class="name"><a href="../lodim/Pos/operator_multiply.html">operator *</a></span><span class="signature">(<wbr><span class="parameter" id="*-param-scalar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">scalar</span></span>)
+  <span class="name"><a href="../lodim/Pos/operator_multiply.html">operator *</a></span><span class="signature">(<wbr><span class="parameter" id="*-param-scalar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">scalar</span></span>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -498,7 +550,7 @@
 </dd>
 
         <dt id="operator &lt;&lt;" class="callable">
-  <span class="name"><a href="../lodim/Pos/operator_shift_left.html">operator <<</a></span><span class="signature">(<wbr><span class="parameter" id="<<-param-shifts"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">shifts</span></span>)
+  <span class="name"><a href="../lodim/Pos/operator_shift_left.html">operator <<</a></span><span class="signature">(<wbr><span class="parameter" id="<<-param-shifts"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">shifts</span></span>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -511,8 +563,8 @@
 </dd>
 
         <dt id="operator ==" class="callable">
-  <span class="name"><a href="../lodim/Pos/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/bool-class.html">bool</a></span>
+  <span class="name"><a href="../lodim/Pos/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/bool-class.html">bool</a></span>
   </span>
   
 
@@ -524,7 +576,7 @@
 </dd>
 
         <dt id="operator &gt;&gt;" class="callable">
-  <span class="name"><a href="../lodim/Pos/operator_shift_right.html">operator >></a></span><span class="signature">(<wbr><span class="parameter" id=">>-param-shifts"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">shifts</span></span>)
+  <span class="name"><a href="../lodim/Pos/operator_shift_right.html">operator >></a></span><span class="signature">(<wbr><span class="parameter" id=">>-param-shifts"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">shifts</span></span>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -589,7 +641,7 @@
 </dd>
 
         <dt id="operator ~&#47;" class="callable">
-  <span class="name"><a href="../lodim/Pos/operator_truncate_divide.html">operator ~/</a></span><span class="signature">(<wbr><span class="parameter" id="~/-param-scalar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.4.4/dart-core/int-class.html">int</a></span> <span class="parameter-name">scalar</span></span>)
+  <span class="name"><a href="../lodim/Pos/operator_truncate_divide.html">operator ~/</a></span><span class="signature">(<wbr><span class="parameter" id="~/-param-scalar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">scalar</span></span>)
     <span class="returntype parameter">&#8594; <a href="../lodim/Pos-class.html">Pos</a></span>
   </span>
   
@@ -608,9 +660,22 @@
   <section class="summary offset-anchor" id="static-methods">
     <h2>Static Methods</h2>
     <dl class="callables">
+        <dt id="byDistanceTo" class="callable">
+  <span class="name"><a href="../lodim/Pos/byDistanceTo.html">byDistanceTo</a></span><span class="signature">(<wbr><span class="parameter" id="byDistanceTo-param-target"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">target</span>, {</span><span class="parameter" id="byDistanceTo-param-using"><span class="type-annotation"><a href="../lodim/Distance.html">Distance</a></span> <span class="parameter-name">using</span> = <span class="default-value">euclideanSquared</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a comparator that sorts positions by distance to <code>target</code>.
+  
+
+</dd>
+
         <dt id="byMagnitude" class="callable">
-  <span class="name"><a href="../lodim/Pos/byMagnitude.html">byMagnitude</a></span><span class="signature">(<wbr><span class="parameter" id="byMagnitude-param-formula">[<span class="type-annotation"><a href="../lodim/Distance.html">Distance</a></span> <span class="parameter-name">formula</span> = <span class="default-value">euclideanSquared</span>]</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.4.4/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+  <span class="name"><a href="../lodim/Pos/byMagnitude.html">byMagnitude</a></span><span class="signature">(<wbr>[<span class="parameter" id="byMagnitude-param-formula"><span class="type-annotation"><a href="../lodim/Distance.html">Distance</a></span> <span class="parameter-name">formula</span> = <span class="default-value">euclideanSquared</span></span>])
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.0/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
   </span>
   
 
@@ -631,7 +696,7 @@
     <dl class="properties">
         <dt id="byColumnMajor" class="constant">
     <span class="name "><a href="../lodim/Pos/byColumnMajor-constant.html">byColumnMajor</a></span>
-  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/3.4.4/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/3.5.0/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
   
 
 </dt>
@@ -643,7 +708,7 @@
 
         <dt id="byRowMajor" class="constant">
     <span class="name "><a href="../lodim/Pos/byRowMajor-constant.html">byRowMajor</a></span>
-  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/3.4.4/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/3.5.0/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
   
 
 </dt>
@@ -697,7 +762,7 @@
 <footer>
   <span class="no-break">
     lodim
-      0.1.1+1
+      0.1.2
   </span>
 
   

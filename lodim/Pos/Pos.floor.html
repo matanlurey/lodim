@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the overlaps method from the Rect class, for the Dart programming language.">
-  <title>overlaps method - Rect class - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the Pos.floor constructor from Class Pos from the lodim library, for the Dart programming language.">
+  <title>Pos.floor constructor - Pos - lodim library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim.dart</a></li>
-    <li><a href="../../lodim/Rect-class.html">Rect</a></li>
-    <li class="self-crumb">overlaps method</li>
+    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
+    <li class="self-crumb">Pos.floor factory constructor</li>
   </ol>
-  <div class="self-name">overlaps</div>
+  <div class="self-name">Pos.floor</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -51,36 +51,31 @@
 </header>
 <main>
 
-<div
-    id="dartdoc-main-content"
-    class="main-content"
-    data-above-sidebar="lodim&#47;Rect-class-sidebar.html"
-    data-below-sidebar="">
-    <div>
-<h1><span class="kind-method">overlaps</span> method 
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="lodim&#47;Pos-class-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-constructor">Pos.floor</span> constructor 
 </h1></div>
 
     <section class="multi-line-signature">
       
-
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.0/dart-core/bool-class.html">bool</a></span>
-<span class="name ">overlaps</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="overlaps-param-other"><span class="type-annotation"><a href="../../lodim/Rect-class.html">Rect</a></span> <span class="parameter-name">other</span></span></li>
+      <span class="name ">Pos.floor</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="floor-param-dx"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/double-class.html">double</a></span> <span class="parameter-name">dx</span>, </span></li>
+<li><span class="parameter" id="floor-param-dy"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.0/dart-core/double-class.html">double</a></span> <span class="parameter-name">dy</span></span></li>
 </ol>)
-
-      
-
     </section>
+
     
 <section class="desc markdown">
-  <p>Returns whether the provided rectangle overlaps this rectangle.</p>
-<p>Rectangles exclude their <a href="../../lodim/Rect/right.html">right</a> and <a href="../../lodim/Rect/bottom.html">bottom</a> edges.</p>
+  <p>Creates a new position by flooring the given <code>dx</code> and <code>dy</code> values.</p>
+<p>This is equivalent to:</p>
+<pre class="language-dart"><code class="language-dart">final a = Pos(dx.floor(), dy.floor());
+</code></pre>
 <h2 id="example">Example</h2>
-<pre class="language-dart"><code class="language-dart">final a = Rect.fromLTWH(0, 0, 2, 2);
-final b = Rect.fromLTWH(1, 1, 2, 2);
-print(a.overlaps(b)); // true
-
-final c = Rect.fromLTWH(3, 3, 2, 2);
-print(a.overlaps(c)); // false
+<pre class="language-dart"><code class="language-dart">final a = Pos.floor(10.5, 20.5);
+print(a); // =&gt; Pos(10, 20)
 </code></pre>
 </section>
 
@@ -88,11 +83,8 @@ print(a.overlaps(c)); // false
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">bool overlaps(Rect other) {
-  return left &lt; other.right &amp;&amp;
-      right &gt; other.left &amp;&amp;
-      top &lt; other.bottom &amp;&amp;
-      bottom &gt; other.top;
+  <pre class="language-dart"><code class="language-dart">factory Pos.floor(double dx, double dy) {
+  return Pos(dx.floor(), dy.floor());
 }</code></pre>
 </section>
 
@@ -110,17 +102,17 @@ print(a.overlaps(c)); // false
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim</a></li>
-    <li><a href="../../lodim/Rect-class.html">Rect</a></li>
-    <li class="self-crumb">overlaps method</li>
+    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
+    <li class="self-crumb">Pos.floor factory constructor</li>
 </ol>
 
 
-    <h5>Rect class</h5>
+    <h5>Pos class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
-  </div><!--/.sidebar-offcanvas-->
+  </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-</div><!--/.sidebar-offcanvas-->
+  </div><!--/.sidebar-offcanvas-->
 
 </main>
 
