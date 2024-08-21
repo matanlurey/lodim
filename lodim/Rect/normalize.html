@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the byRowMajor constant from the Pos class, for the Dart programming language.">
-  <title>byRowMajor constant - Pos class - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the normalize method from the Rect class, for the Dart programming language.">
+  <title>normalize method - Rect class - lodim library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim.dart</a></li>
-    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
-    <li class="self-crumb">byRowMajor constant</li>
+    <li><a href="../../lodim/Rect-class.html">Rect</a></li>
+    <li class="self-crumb">normalize method</li>
   </ol>
-  <div class="self-name">byRowMajor</div>
+  <div class="self-name">normalize</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,41 +54,49 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="lodim&#47;Pos-class-sidebar.html"
+    data-above-sidebar="lodim&#47;Rect-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-property">byRowMajor</span> constant 
+<h1><span class="kind-method">normalize</span> method 
 </h1></div>
 
-      <section class="multi-line-signature">
-        
-        <a href="https://api.dart.dev/stable/3.5.1/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../lodim/Pos-class.html">Pos</a></span>&gt;</span>
-        const <span class="name ">byRowMajor</span>
-        
-
-      </section>
+    <section class="multi-line-signature">
       
+
+<span class="returntype"><a href="../../lodim/Rect-class.html">Rect</a></span>
+<span class="name ">normalize</span>(<wbr>)
+
+      
+
+    </section>
+    
 <section class="desc markdown">
-  <p>A comparator that sorts positions by row-major order.</p>
-<p>The y-axis is the primary sort key, and the x-axis is the secondary.</p>
+  <p>Returns a normalized rectangle where <code>left &lt;= right</code> and <code>top &lt;= bottom</code>.</p>
 <h2 id="example">Example</h2>
-<pre class="language-dart"><code class="language-dart">final positions = [Pos(10, 15), Pos(4, 8), Pos(12, 9)];
-positions.sort(Pos.byRowMajor);
-print(positions); // =&gt; [Pos(4, 8), Pos(12, 9), Pos(10, 15)]
+<pre class="language-dart"><code class="language-dart">final rect = Rect.fromLTWH(2, 2, -2, -2);
+final normalized = rect.normalize();
+print(normalized); // Rect.fromLTWH(0, 0, 0, 0)
 </code></pre>
 </section>
 
-      
+
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static const Comparator&lt;Pos&gt; byRowMajor = _byRowMajor;</code></pre>
+  <pre class="language-dart"><code class="language-dart">Rect normalize() {
+  final l = math.min(left, right);
+  final t = math.min(top, bottom);
+  final r = math.max(left, right);
+  final b = math.max(top, bottom);
+  return Rect.fromLTRB(l, t, r, b);
+}</code></pre>
 </section>
 
 
-</div> <!-- /.main-content -->
+  </div> <!-- /.main-content -->
 
-<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -98,16 +106,16 @@ print(positions); // =&gt; [Pos(4, 8), Pos(12, 9), Pos(10, 15)]
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim</a></li>
-    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
-    <li class="self-crumb">byRowMajor constant</li>
+    <li><a href="../../lodim/Rect-class.html">Rect</a></li>
+    <li class="self-crumb">normalize method</li>
 </ol>
 
 
-  <h5>Pos class</h5>
-  <div id="dartdoc-sidebar-left-content"></div>
-</div><!--/.sidebar-offcanvas-->
+    <h5>Rect class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
 
-<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
 
 </main>

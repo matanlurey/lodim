@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the byRowMajor constant from the Pos class, for the Dart programming language.">
-  <title>byRowMajor constant - Pos class - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the toSize method from the Pos class, for the Dart programming language.">
+  <title>toSize method - Pos class - lodim library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim.dart</a></li>
     <li><a href="../../lodim/Pos-class.html">Pos</a></li>
-    <li class="self-crumb">byRowMajor constant</li>
+    <li class="self-crumb">toSize method</li>
   </ol>
-  <div class="self-name">byRowMajor</div>
+  <div class="self-name">toSize</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -57,38 +57,47 @@
     data-above-sidebar="lodim&#47;Pos-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-property">byRowMajor</span> constant 
+<h1><span class="kind-method">toSize</span> method 
 </h1></div>
 
-      <section class="multi-line-signature">
-        
-        <a href="https://api.dart.dev/stable/3.5.1/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../lodim/Pos-class.html">Pos</a></span>&gt;</span>
-        const <span class="name ">byRowMajor</span>
-        
-
-      </section>
+    <section class="multi-line-signature">
       
+
+<span class="returntype"><a href="../../lodim/Rect-class.html">Rect</a></span>
+<span class="name ">toSize</span>(<wbr>[<ol class="parameter-list single-line"> <li><span class="parameter" id="toSize-param-origin"><span class="type-annotation"><a href="../../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">origin</span> = <span class="default-value">Pos.zero</span></span></li>
+</ol>])
+
+      
+
+    </section>
+    
 <section class="desc markdown">
-  <p>A comparator that sorts positions by row-major order.</p>
-<p>The y-axis is the primary sort key, and the x-axis is the secondary.</p>
-<h2 id="example">Example</h2>
-<pre class="language-dart"><code class="language-dart">final positions = [Pos(10, 15), Pos(4, 8), Pos(12, 9)];
-positions.sort(Pos.byRowMajor);
-print(positions); // =&gt; [Pos(4, 8), Pos(12, 9), Pos(10, 15)]
+  <p>Returns <code>this</code> as a sized rectangle with the origin at <code>origin</code>.</p>
+<p>This is equivalent to:</p>
+<pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
+final b = Rect.fromLTWH(0, 0, a.x, a.y);
+</code></pre>
+<p>May optionally provide an <code>origin</code> parameter to specify the origin of the
+rectangle:</p>
+<pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
+print(a.toSize(Pos(5, 5))); // =&gt; Rect.fromLTWH(5, 5, 10, 20)
 </code></pre>
 </section>
 
-      
+
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static const Comparator&lt;Pos&gt; byRowMajor = _byRowMajor;</code></pre>
+  <pre class="language-dart"><code class="language-dart">Rect toSize([Pos origin = Pos.zero]) {
+  return Rect.fromLTWH(origin.x, origin.y, x, y);
+}</code></pre>
 </section>
 
 
-</div> <!-- /.main-content -->
+  </div> <!-- /.main-content -->
 
-<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -99,15 +108,15 @@ print(positions); // =&gt; [Pos(4, 8), Pos(12, 9), Pos(10, 15)]
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim</a></li>
     <li><a href="../../lodim/Pos-class.html">Pos</a></li>
-    <li class="self-crumb">byRowMajor constant</li>
+    <li class="self-crumb">toSize method</li>
 </ol>
 
 
-  <h5>Pos class</h5>
-  <div id="dartdoc-sidebar-left-content"></div>
-</div><!--/.sidebar-offcanvas-->
+    <h5>Pos class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
 
-<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
 
 </main>
