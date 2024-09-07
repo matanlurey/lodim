@@ -414,6 +414,32 @@ for (final edge in rect.edges) {
 
 </dd>
 
+          <dt id="assertRectangular1D" class="callable">
+  <span class="name"><a href="../lodim/assertRectangular1D.html">assertRectangular1D</a></span><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="assertRectangular1D-param-cells"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">cells</span>, {</span><span class="parameter" id="assertRectangular1D-param-width"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">width</span>, </span><span class="parameter" id="assertRectangular1D-param-height"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">height</span></span>})
+    <span class="returntype parameter">&#8594; (<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span>)</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks that <code>cells</code> is a non-empty iterable and that it is rectangular.
+  
+
+</dd>
+
+          <dt id="assertRectangular2d" class="callable">
+  <span class="name"><a href="../lodim/assertRectangular2d.html">assertRectangular2d</a></span><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="assertRectangular2d-param-rows"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">rows</span></span>)
+    <span class="returntype parameter">&#8594; (<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span>)</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks that the provided iterable of <code>rows</code> is rectangular and non-empty.
+  
+
+</dd>
+
           <dt id="checkNonNegative" class="callable">
   <span class="name"><a href="../lodim/checkNonNegative.html">checkNonNegative</a></span><span class="signature">(<wbr><span class="parameter" id="checkNonNegative-param-value"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">value</span>, [</span><span class="parameter" id="checkNonNegative-param-name"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="checkNonNegative-param-message"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span></span>])
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span>
@@ -436,6 +462,32 @@ for (final edge in rect.edges) {
 </dt>
 <dd>
   Checks that an integer <code>value</code> is positive.
+  
+
+</dd>
+
+          <dt id="checkRectangular1d" class="callable">
+  <span class="name"><a href="../lodim/checkRectangular1d.html">checkRectangular1d</a></span><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="checkRectangular1d-param-cells"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">cells</span>, {</span><span class="parameter" id="checkRectangular1d-param-width"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">width</span>, </span><span class="parameter" id="checkRectangular1d-param-height"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">height</span></span>})
+    <span class="returntype parameter">&#8594; (<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span>)</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks that <code>cells</code> is a non-empty iterable and that it is rectangular.
+  
+
+</dd>
+
+          <dt id="checkRectangular2D" class="callable">
+  <span class="name"><a href="../lodim/checkRectangular2D.html">checkRectangular2D</a></span><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="checkRectangular2D-param-rows"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">rows</span></span>)
+    <span class="returntype parameter">&#8594; (<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span>)</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks that the provided iterable of <code>rows</code> is rectangular and non-empty.
   
 
 </dd>
@@ -649,7 +701,7 @@ with <code>value</code>.
 <footer>
   <span class="no-break">
     lodim
-      0.1.5
+      0.1.6
   </span>
 
   

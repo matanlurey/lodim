@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the vectorLine constant from the lodim library, for the Dart programming language.">
-  <title>vectorLine constant - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the checkRectangular2D function from the lodim library, for the Dart programming language.">
+  <title>checkRectangular2D function - lodim library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">vectorLine constant</li>
+    <li class="self-crumb">checkRectangular2D&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
   </ol>
-  <div class="self-name">vectorLine</div>
+  <div class="self-name">checkRectangular2D</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -56,29 +56,35 @@
       data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-top-level-property">vectorLine</span> top-level constant 
+<h1><span class="kind-function">checkRectangular2D&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
  
 </h1></div>
 
-        <section class="multi-line-signature">
-          
-          <a href="../lodim/Path.html">Path</a>
-          const <span class="name ">vectorLine</span>
-          
-
-        </section>
+    <section class="multi-line-signature">
         
+
+<span class="returntype">(<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span>)</span>
+<span class="name ">checkRectangular2D</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="checkRectangular2D-param-rows"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">rows</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
 <section class="desc markdown">
-  <p>Calculates positions along a line using a fast 2D vector algorithm.</p>
-<p><strong>Deprecated</strong>: Use <a href="../lodim/lineVector-constant.html">lineVector</a> instead.</p>
+  <p>Checks that the provided iterable of <code>rows</code> is rectangular and non-empty.</p>
+<p>Throws if the iterable is not rectangular or if it is empty (has no rows).</p>
+<p>Returns the iterable and dimensions of the rectangle if it is rectangular.</p>
 </section>
 
-        
+
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const Path vectorLine = _lineVector;</code></pre>
+  <pre class="language-dart"><code class="language-dart">(Iterable&lt;E&gt;, Pos) checkRectangular2D&lt;E&gt;(Iterable&lt;Iterable&lt;E&gt;&gt; rows) {
+  return _checkRectangular2d(rows, check: true);
+}</code></pre>
 </section>
-
 
 
   </div> <!-- /.main-content -->
@@ -94,7 +100,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">vectorLine constant</li>
+    <li class="self-crumb">checkRectangular2D&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
 </ol>
 
 
