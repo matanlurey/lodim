@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the manhattan function from the lodim library, for the Dart programming language.">
-  <title>manhattan function - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the Pos.fromXY constructor from Class Pos from the lodim library, for the Dart programming language.">
+  <title>Pos.fromXY constructor - Pos - lodim library - Dart API</title>
 
 
   
@@ -13,26 +13,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
-  <link rel="stylesheet" href="../static-assets/github.css?v1">
-  <link rel="stylesheet" href="../static-assets/styles.css?v1">
-  <link rel="icon" href="../static-assets/favicon.png?v1">
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
 
   
 </head>
 
 
-<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
 
 <div id="overlay-under-drawer"></div>
 
 <header id="title">
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
-    <li><a href="../index.html">lodim</a></li>
-    <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">manhattan function</li>
+    <li><a href="../../index.html">lodim</a></li>
+    <li><a href="../../lodim/lodim-library.html">lodim.dart</a></li>
+    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
+    <li class="self-crumb">Pos.fromXY factory constructor</li>
   </ol>
-  <div class="self-name">manhattan</div>
+  <div class="self-name">Pos.fromXY</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -53,35 +54,28 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
+      data-above-sidebar="lodim&#47;Pos-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-function">manhattan</span> function 
- 
+<h1><span class="kind-constructor">Pos.fromXY</span> constructor 
 </h1></div>
 
     <section class="multi-line-signature">
-        
-
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/int-class.html">int</a></span>
-<span class="name ">manhattan</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="manhattan-param-a"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">a</span>, </span></li>
-<li><span class="parameter" id="manhattan-param-b"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">b</span></span></li>
+      
+      <span class="name ">Pos.fromXY</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="fromXY-param-xy"><span class="type-annotation">(<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span></span>)</span> <span class="parameter-name">xy</span></span></li>
 </ol>)
-
-        
-
     </section>
+
     
 <section class="desc markdown">
-  <p>Calculates the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan</a> distance between two positions.</p>
-<p>The Manhattan distance is the sum of the absolute differences of the
-horizontal and vertical offsets between two points in a 2D space, or
-<code>|x₂ - x₁|</code>. This is useful for calculating distances in a grid-based
-system, where diagonal movement is <em>not</em> allowed.</p>
+  <p>Creates a new position by destructuring a two-element tuple.</p>
+<p>This is equivalent to:</p>
+<pre class="language-dart"><code class="language-dart">final a = Pos(tuple.$1, tuple.$2);
+</code></pre>
+<p>The inverse of this operation is <code>xy</code>.</p>
 <h2 id="example">Example</h2>
-<pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
-final b = Pos(30, 40);
-print(a.distanceTo(b, manhattan)); // =&gt; 40
+<pre class="language-dart"><code class="language-dart">final a = Pos.fromXY((10, 20));
+print(a); // =&gt; Pos(10, 20)
 </code></pre>
 </section>
 
@@ -89,11 +83,7 @@ print(a.distanceTo(b, manhattan)); // =&gt; 40
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@pragma(&#39;vm:prefer-inline&#39;)
-int manhattan(Pos a, Pos b) {
-  final delta = (a - b).abs();
-  return delta.x + delta.y;
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Pos.fromXY((int x, int y) xy) =&gt; Pos(xy.$1, xy.$2);</code></pre>
 </section>
 
 
@@ -108,13 +98,14 @@ int manhattan(Pos a, Pos b) {
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-    <li><a href="../index.html">lodim</a></li>
-    <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">manhattan function</li>
+    <li><a href="../../index.html">lodim</a></li>
+    <li><a href="../../lodim/lodim-library.html">lodim</a></li>
+    <li><a href="../../lodim/Pos-class.html">Pos</a></li>
+    <li class="self-crumb">Pos.fromXY factory constructor</li>
 </ol>
 
 
-    <h5>lodim library</h5>
+    <h5>Pos class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-left-->
 
@@ -126,7 +117,7 @@ int manhattan(Pos a, Pos b) {
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   
@@ -134,8 +125,8 @@ int manhattan(Pos a, Pos b) {
 
 
 
-<script src="../static-assets/highlight.pack.js?v1"></script>
-<script src="../static-assets/docs.dart.js"></script>
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

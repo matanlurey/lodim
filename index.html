@@ -76,6 +76,14 @@
       <code>&lt;Pos&gt;.lineTo</code>, which uses <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</a>.
       However, all of these algorithms are cleanly defined and documented, and
       allow user-defined overrides.</p>
+<h3 id="design-principles">Design Principles</h3>
+<p><code>lodim</code> is designed to be a low-level, fixed-point geometry library that is not
+opionated about how you use it. It is not a game engine, nor does it provide
+high-level abstractions for rendering or collections.</p>
+<p>For example, top-level functions such as <code>getRect</code> or <code>fillRect</code> operate on
+either <code>Rect</code> or <code>Pos</code> types and either callback methods or a generic linear
+buffer. For a higher-level APIs, consider using <code>lodim</code> in conjunction with
+another library, such as <a href="https://pub.dev/packages/sector"><code>package:sector</code></a>.</p>
 <h2 id="usage">Usage</h2>
 <p>Just add a dependency in your <code>pubspec.yaml</code> or run the following command:</p>
 <pre class="language-bash"><code class="language-bash">dart pub add lodim
@@ -256,7 +264,7 @@ not possible with general-purpose code, such as jump-table based rotations.</p>
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

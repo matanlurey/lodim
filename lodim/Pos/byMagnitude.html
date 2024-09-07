@@ -63,8 +63,8 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
-<span class="name ">byMagnitude</span>(<wbr>[<ol class="parameter-list single-line"> <li><span class="parameter" id="byMagnitude-param-formula"><span class="type-annotation"><a href="../../lodim/Distance.html">Distance</a></span> <span class="parameter-name">formula</span> = <span class="default-value">euclideanSquared</span></span></li>
+<span class="returntype"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Comparator.html">Comparator</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+<span class="name ">byMagnitude</span>(<wbr>[<ol class="parameter-list single-line"> <li><span class="parameter" id="byMagnitude-param-formula"><span class="type-annotation"><a href="../../lodim/Distance.html">Distance</a></span> <span class="parameter-name">formula</span> = <span class="default-value">distanceSquared</span></span></li>
 </ol>])
 
       
@@ -73,9 +73,10 @@
     
 <section class="desc markdown">
   <p>Returns a comparator that sorts positions by distance from the origin.</p>
-<p>The default formula is <a href="../../lodim/euclideanSquared.html">euclideanSquared</a>, which produces a value useful
+<p>The default formula is <a href="../../lodim/distanceSquared-constant.html">distanceSquared</a>, which produces a value useful
 for distances that will be <em>compared</em>, but not used as an actual distance;
-see also <a href="../../lodim/manhattan.html">manhattan</a> and <a href="../../lodim/chebyshev.html">chebyshev</a>, or implement your own <a href="../../lodim/Distance.html">Distance</a>.</p>
+see also <a href="../../lodim/distanceManhattan-constant.html">distanceManhattan</a> and <a href="../../lodim/distanceChebyshev-constant.html">distanceChebyshev</a>, or implement your
+own <a href="../../lodim/Distance.html">Distance</a>.</p>
 <h2 id="example">Example</h2>
 <p>To use euclidean distance:</p>
 <pre class="language-dart"><code class="language-dart">final positions = [Pos(10, 15), Pos(4, 8), Pos(12, 9)];
@@ -93,7 +94,7 @@ print(positions); // =&gt; [Pos(4, 8), Pos(12, 9), Pos(10, 15)]
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static Comparator&lt;Pos&gt; byMagnitude([Distance formula = euclideanSquared]) {
+  <pre class="language-dart"><code class="language-dart">static Comparator&lt;Pos&gt; byMagnitude([Distance formula = distanceSquared]) {
   return (a, b) =&gt; formula(a, Pos.zero).compareTo(formula(b, Pos.zero));
 }</code></pre>
 </section>
@@ -129,7 +130,7 @@ print(positions); // =&gt; [Pos(4, 8), Pos(12, 9), Pos(10, 15)]
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

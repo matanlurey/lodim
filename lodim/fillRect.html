@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the fillRect function from the lodim library, for the Dart programming language.">
+  <title>fillRect function - lodim library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">lodim</a></li>
+    <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
+    <li class="self-crumb">fillRect&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+  </ol>
+  <div class="self-name">fillRect</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">fillRect&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype">void</span>
+<span class="name ">fillRect</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="fillRect-param-bounds"><span class="type-annotation"><a href="../lodim/Rect-class.html">Rect</a></span> <span class="parameter-name">bounds</span>, </span></li>
+<li><span class="parameter" id="fillRect-param-set"><span class="type-annotation">void</span> <span class="parameter-name">set</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span>, </span></li>
+<li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
+</ol>), </span></li>
+<li><span class="parameter" id="fillRect-param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Fills each element within <code>bounds</code>, exclusive of the bottom-right edge,
+with <code>value</code>.</p>
+<p>The <code>set</code> function is called with each position within the bounds, and the
+<code>value</code> is passed as the second argument.</p>
+<p>It is the caller's responsibility to ensure that the bounds are valid or
+the behavior is undefined. This function is intended as a low-level utility
+for grid-like structures; consider asserting or clamping the bounds if
+necessary before calling this function.</p>
+<p>The changes are applied in row-major order.</p>
+<h2 id="example">Example</h2>
+<p>For the below examples, we use a simple 2-dimensional list as the grid-like
+structure.</p>
+<p>Consider <a href="https://pub.dev/packages/sector"><code>package:sector</code></a> for a complete
+implementation.</p>
+<h3 id="fill-a-grid-with-a-value">Fill a grid with a value</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
+fillRect(
+  Rect.fromWH(3, 2),
+  (pos, value) =&gt; grid[pos.y][pos.x] = value,
+  1,
+);
+
+print(grid); // =&gt; [[1, 1, 1], [1, 1, 1]]
+</code></pre>
+<h3 id="fill-a-sub-region-with-a-value">Fill a sub-region with a value</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
+fillRect(
+  Rect.fromLTWH(1, 0, 2, 1),
+  (pos, value) =&gt; grid[pos.y][pos.x] = value,
+  1,
+);
+
+print(grid); // =&gt; [[0, 1, 1], [0, 0, 0]]
+</code></pre>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">void fillRect&lt;E&gt;(Rect bounds, void Function(Pos, E) set, E value) {
+  for (final pos in bounds.positions) {
+    set(pos, value);
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">lodim</a></li>
+    <li><a href="../lodim/lodim-library.html">lodim</a></li>
+    <li class="self-crumb">fillRect&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+</ol>
+
+
+    <h5>lodim library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lodim
+      0.1.5
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

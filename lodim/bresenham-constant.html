@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the vectorLine function from the lodim library, for the Dart programming language.">
-  <title>vectorLine function - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the bresenham constant from the lodim library, for the Dart programming language.">
+  <title>bresenham constant - lodim library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">vectorLine function</li>
+    <li class="self-crumb"><span class="deprecated">bresenham</span> constant</li>
   </ol>
-  <div class="self-name">vectorLine</div>
+  <div class="self-name">bresenham</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -56,49 +56,35 @@
       data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-function">vectorLine</span> function 
+<h1><span class="kind-top-level-property">bresenham</span> top-level constant 
  
 </h1></div>
 
-    <section class="multi-line-signature">
+        <section class="multi-line-signature">
+          
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.5.2/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `lineBresenham` instead.&#39;)</li>
+    </ol>
+  </div>
+          <a class="deprecated" href="../lodim/Line.html">Line</a>
+          const <span class="name deprecated">bresenham</span>
+          
+
+        </section>
         
-
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
-<span class="name ">vectorLine</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="vectorLine-param-start"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">start</span>, </span></li>
-<li><span class="parameter" id="vectorLine-param-end"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">end</span>, {</span></li>
-<li><span class="parameter" id="vectorLine-param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span>, </span></li>
-</ol>})
-
-        
-
-    </section>
-    
 <section class="desc markdown">
-  <p>Calculates positions along a line using a fast 2D vector algorithm.</p>
-<p>Considered less "pixel-perfect" than <a href="../lodim/bresenham.html">bresenham</a>, but faster and simpler.</p>
-<h2 id="example">Example</h2>
-<p>By default (i.e. <code>exclusive = false</code>):</p>
-<pre class="language-dart"><code class="language-dart">final line = vectorLine(Pos(0, 0), Pos(2, 2));
-print(line); // (0, 0), (1, 1), (2, 2)
-</code></pre>
-<p>When <code>exclusive = true</code>:</p>
-<pre class="language-dart"><code class="language-dart">final line = vectorLine(Pos(0, 0), Pos(2, 2), exclusive: true);
-print(line); // (0, 0), (1, 1)
-</code></pre>
+  <p>Calculates positions along a line optimized for fixed-point math.</p>
+<p><strong>Deprecated</strong>: Use <a href="../lodim/lineBresenham-constant.html">lineBresenham</a> instead.</p>
 </section>
 
-
-    
+        
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Iterable&lt;Pos&gt; vectorLine(Pos start, Pos end, {bool exclusive = false}) {
-  final slope = (end - start).normalizedApproximate;
-  if (exclusive) {
-    end -= slope;
-  }
-  return _VectorLine(start, end, slope);
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">@Deprecated(&#39;Use `lineBresenham` instead.&#39;)
+const Line bresenham = _lineBresenham;</code></pre>
 </section>
+
 
 
   </div> <!-- /.main-content -->
@@ -114,7 +100,7 @@ print(line); // (0, 0), (1, 1)
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">vectorLine function</li>
+    <li class="self-crumb"><span class="deprecated">bresenham</span> constant</li>
 </ol>
 
 
@@ -130,7 +116,7 @@ print(line); // (0, 0), (1, 1)
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

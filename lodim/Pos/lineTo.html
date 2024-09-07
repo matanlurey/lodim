@@ -31,7 +31,7 @@
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim.dart</a></li>
     <li><a href="../../lodim/Pos-class.html">Pos</a></li>
-    <li class="self-crumb">lineTo method</li>
+    <li class="self-crumb"><span class="deprecated">lineTo</span> method</li>
   </ol>
   <div class="self-name">lineTo</div>
   <form class="search navbar-right" role="search">
@@ -62,11 +62,16 @@
 
     <section class="multi-line-signature">
       
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.dart.dev/stable/3.5.2/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `pathTo` instead.&#39;)</li>
+    </ol>
+  </div>
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
-<span class="name ">lineTo</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="lineTo-param-other"><span class="type-annotation"><a href="../../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, {</span></li>
-<li><span class="parameter" id="lineTo-param-using"><span class="type-annotation"><a href="../../lodim/Line.html">Line</a></span> <span class="parameter-name">using</span> = <span class="default-value">bresenham</span>, </span></li>
-<li><span class="parameter" id="lineTo-param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span>, </span></li>
+<span class="returntype"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
+<span class="name deprecated">lineTo</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="lineTo-param-other"><span class="type-annotation"><a href="../../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, {</span></li>
+<li><span class="parameter" id="lineTo-param-using"><span class="type-annotation"><a href="../../lodim/Path.html">Path</a></span> <span class="parameter-name">using</span> = <span class="default-value">lineBresenham</span>, </span></li>
+<li><span class="parameter" id="lineTo-param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span>, </span></li>
 </ol>})
 
       
@@ -75,26 +80,21 @@
     
 <section class="desc markdown">
   <p>Returns an iterable of positions that draws a line from <code>this</code> to <code>other</code>.</p>
-<p>The default line algorithm is <a href="../../lodim/bresenham.html">bresenham</a>, which is a fast and efficient
-algorithm for drawing lines between two points in a 2D space. You can also
-provide your own <a href="../../lodim/Line.html">Line</a>.</p>
-<h2 id="example">Example</h2>
-<pre class="language-dart"><code class="language-dart">final a = Pos(0, 0);
-final b = Pos(2, 2);
-print(a.lineTo(b)); // =&gt; [Pos(0, 0), Pos(1, 1), Pos(2, 2)]
-</code></pre>
+<p><strong>Deprecated</strong>: Use <a href="../../lodim/Pos/pathTo.html">pathTo</a> instead.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Iterable&lt;Pos&gt; lineTo(
+  <pre class="language-dart"><code class="language-dart">&#47;&#47; coverage:ignore-start
+@Deprecated(&#39;Use `pathTo` instead.&#39;)
+Iterable&lt;Pos&gt; lineTo(
   Pos other, {
-  Line using = bresenham,
+  Path using = lineBresenham,
   bool exclusive = false,
 }) {
-  return using(this, other, exclusive: exclusive);
+  return pathTo(other, using: using, exclusive: exclusive);
 }</code></pre>
 </section>
 
@@ -113,7 +113,7 @@ print(a.lineTo(b)); // =&gt; [Pos(0, 0), Pos(1, 1), Pos(2, 2)]
     <li><a href="../../index.html">lodim</a></li>
     <li><a href="../../lodim/lodim-library.html">lodim</a></li>
     <li><a href="../../lodim/Pos-class.html">Pos</a></li>
-    <li class="self-crumb">lineTo method</li>
+    <li class="self-crumb"><span class="deprecated">lineTo</span> method</li>
 </ol>
 
 
@@ -129,7 +129,7 @@ print(a.lineTo(b)); // =&gt; [Pos(0, 0), Pos(1, 1), Pos(2, 2)]
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

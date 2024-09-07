@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the euclideanApproximate function from the lodim library, for the Dart programming language.">
-  <title>euclideanApproximate function - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the distanceSquared constant from the lodim library, for the Dart programming language.">
+  <title>distanceSquared constant - lodim library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">euclideanApproximate function</li>
+    <li class="self-crumb">distanceSquared constant</li>
   </ol>
-  <div class="self-name">euclideanApproximate</div>
+  <div class="self-name">distanceSquared</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -56,41 +56,38 @@
       data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-function">euclideanApproximate</span> function 
+<h1><span class="kind-top-level-property">distanceSquared</span> top-level constant 
  
 </h1></div>
 
-    <section class="multi-line-signature">
+        <section class="multi-line-signature">
+          
+          <a href="../lodim/Distance.html">Distance</a>
+          const <span class="name ">distanceSquared</span>
+          
+
+        </section>
         
-
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/int-class.html">int</a></span>
-<span class="name ">euclideanApproximate</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="euclideanApproximate-param-a"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">a</span>, </span></li>
-<li><span class="parameter" id="euclideanApproximate-param-b"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">b</span></span></li>
-</ol>)
-
-        
-
-    </section>
-    
 <section class="desc markdown">
-  <p>Calculates an <em>approximate</em> <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean</a> distance between two positions.</p>
-<p>Uses <a href="../lodim/sqrtApproximate.html">sqrtApproximate</a> to calculate the square root of <a href="../lodim/euclideanSquared.html">euclideanSquared</a>.</p>
+  <p>Calculates the <em>squared</em> <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean</a> distance between two positions.</p>
+<p>The squared Euclidean distance is the square of the straight-line distance
+between two points in a 2D space, or <code>(x₂ - x₁)² + (y₂ - y₁)²</code>. This is
+useful for comparing distances without needing to calculate the square root,
+i.e. when doing a comparison between distances but not using the actual
+distance value.</p>
 <h2 id="example">Example</h2>
 <pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
 final b = Pos(30, 40);
-print(a.distanceTo(b, using: euclideanApproximate)); // =&gt; 22
+print(a.distanceTo(b, euclideanSquared)); // =&gt; 500
 </code></pre>
 </section>
 
-
-    
+        
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@pragma(&#39;vm:prefer-inline&#39;)
-int euclideanApproximate(Pos a, Pos b) {
-  return sqrtApproximate(euclideanSquared(a, b));
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">const Distance distanceSquared = _euclideanSquared;</code></pre>
 </section>
+
 
 
   </div> <!-- /.main-content -->
@@ -106,7 +103,7 @@ int euclideanApproximate(Pos a, Pos b) {
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">euclideanApproximate function</li>
+    <li class="self-crumb">distanceSquared constant</li>
 </ol>
 
 
@@ -122,7 +119,7 @@ int euclideanApproximate(Pos a, Pos b) {
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

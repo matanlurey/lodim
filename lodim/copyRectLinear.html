@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the copyRectLinear function from the lodim library, for the Dart programming language.">
+  <title>copyRectLinear function - lodim library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">lodim</a></li>
+    <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
+    <li class="self-crumb">copyRectLinear&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+  </ol>
+  <div class="self-name">copyRectLinear</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">copyRectLinear&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+  <div>
+    <ol class="annotation-list">
+        <li>@_pragmaSpecialize</li>
+    </ol>
+  </div>
+
+<span class="returntype">void</span>
+<span class="name ">copyRectLinear</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list"> <li><span class="parameter" id="copyRectLinear-param-src"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">src</span>, </span></li>
+<li><span class="parameter" id="copyRectLinear-param-dst"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">dst</span>, {</span></li>
+<li><span class="parameter" id="copyRectLinear-param-srcWidth"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">srcWidth</span>, </span></li>
+<li><span class="parameter" id="copyRectLinear-param-dstWidth"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">dstWidth</span>, </span></li>
+<li><span class="parameter" id="copyRectLinear-param-source"><span class="type-annotation"><a href="../lodim/Rect-class.html">Rect</a>?</span> <span class="parameter-name">source</span>, </span></li>
+<li><span class="parameter" id="copyRectLinear-param-target"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">target</span> = <span class="default-value">Pos.zero</span>, </span></li>
+</ol>})
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Copies each element within <code>source</code>, exclusive of the bottom-right edge,
+to another grid-like structure.</p>
+<p>The <code>linear</code> list is assumed to contain all elements in row-major order,
+and a position <code>(x, y)</code> is at index <code>y * width + x</code>. It is the caller's
+responsibility to ensure that the bounds are valid, and <code>width</code> is the
+width of the grid, or the behavior is undefined.</p>
+<p>This function is intended as a low-level utility for grid-like structures;
+consider asserting or clamping the bounds if necessary before calling this
+function.</p>
+<p>If <code>source</code> is omitted, the default is the entire grid.</p>
+<p>The changes are applied in row-major order.</p>
+<h2 id="example">Example</h2>
+<h3 id="copy-a-grid-to-another-grid">Copy a grid to another grid</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  1, 2, 3,
+  4, 5, 6,
+];
+
+final other = [
+  0, 0, 0,
+  0, 0, 0,
+];
+
+copyRectLinear(
+  grid,
+  other,
+  srcWidth: 3,
+  dstWidth: 3,
+);
+
+print(other); // =&gt; [1, 2, 3, 4, 5, 6]
+</code></pre>
+<h3 id="copy-a-sub-region-to-another-grid">Copy a sub-region to another grid</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  1, 2, 3,
+  4, 5, 6,
+];
+
+final other = [
+  0, 0, 0,
+  0, 0, 0,
+];
+
+copyRectLinear(
+  grid,
+  other,
+  srcWidth: 3,
+  dstWidth: 3,
+  source: Rect.fromLTWH(1, 0, 2, 1),
+  target: Pos(1, 0),
+);
+
+print(other); // =&gt; [0, 1, 2, 0, 0, 0]
+</code></pre>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@_pragmaSpecialize
+void copyRectLinear&lt;E&gt;(
+  List&lt;E&gt; src,
+  List&lt;E&gt; dst, {
+  required int srcWidth,
+  required int dstWidth,
+  Rect? source,
+  Pos target = Pos.zero,
+}) {
+  &#47;&#47; Check that the source and destination bounds are valid.
+  _assertValidLinearBounds(
+    src.length,
+    width: srcWidth,
+    bounds: source,
+  );
+  _assertValidLinearBounds(
+    dst.length,
+    width: dstWidth,
+    bounds: source?.translate(target),
+    name: &#39;Destination&#39;,
+  );
+
+  &#47;&#47; Optimization: Contiguous src -&gt; dst copy.
+  if (source == null &amp;&amp; target.x == 0) {
+    final offset = target.toRowMajor(width: dstWidth);
+    return dst.setRange(offset, offset + src.length, src);
+  }
+
+  &#47;&#47; General case: Multiple regions.
+  final srcRect = source ?? Rect.fromWH(srcWidth, src.length ~&#47; srcWidth);
+  final dstRect = Rect.fromTLBR(target, target + srcRect.size);
+
+  &#47;&#47; Iterate over each row and use a memcpy-compatible setRange.
+  final srcOffset = srcRect.topLeft.toRowMajor(width: srcWidth);
+  final dstOffset = dstRect.topLeft.toRowMajor(width: dstWidth);
+  for (var y = 0; y &lt; srcRect.height; y++) {
+    final srcStart = srcOffset + y * srcWidth;
+    final dstStart = dstOffset + y * dstWidth;
+    dst.setRange(dstStart, dstStart + srcRect.width, src, srcStart);
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">lodim</a></li>
+    <li><a href="../lodim/lodim-library.html">lodim</a></li>
+    <li class="self-crumb">copyRectLinear&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+</ol>
+
+
+    <h5>lodim library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lodim
+      0.1.5
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

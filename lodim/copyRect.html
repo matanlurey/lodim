@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the copyRect function from the lodim library, for the Dart programming language.">
+  <title>copyRect function - lodim library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">lodim</a></li>
+    <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
+    <li class="self-crumb">copyRect&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+  </ol>
+  <div class="self-name">copyRect</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">copyRect&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype">void</span>
+<span class="name ">copyRect</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list"> <li><span class="parameter" id="copyRect-param-source"><span class="type-annotation"><a href="../lodim/Rect-class.html">Rect</a></span> <span class="parameter-name">source</span>, </span></li>
+<li><span class="parameter" id="copyRect-param-get"><span class="type-annotation">E</span> <span class="parameter-name">get</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span></li>
+</ol>), </span></li>
+<li><span class="parameter" id="copyRect-param-set"><span class="type-annotation">void</span> <span class="parameter-name">set</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span>, </span></li>
+<li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
+</ol>), {</span></li>
+<li><span class="parameter" id="copyRect-param-target"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">target</span> = <span class="default-value">Pos.zero</span>, </span></li>
+</ol>})
+
+        
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Copies each element within <code>source</code>, exclusive of the bottom-right edge,
+to another grid-like structure.</p>
+<p>The <code>get</code> function is called with each position within the bounds, and the
+return value is passed to the <code>set</code> function with the same position.</p>
+<p>It is the caller's responsibility to ensure that the bounds are valid or
+the behavior is undefined. This function is intended as a low-level utility
+for grid-like structures; consider asserting or clamping the bounds if
+necessary before calling this function.</p>
+<p>The changes are applied in row-major order.</p>
+<h2 id="example">Example</h2>
+<p>For the below examples, we use a simple 2-dimensional list as the grid-like
+structure.</p>
+<p>Consider <a href="https://pub.dev/packages/sector"><code>package:sector</code></a> for a complete
+implementation.</p>
+<h3 id="copy-a-grid-to-another-grid">Copy a grid to another grid</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+final other = [
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
+copyRect(
+  Rect.fromWH(3, 2),
+  (pos) =&gt; grid[pos.y][pos.x],
+  (pos, value) =&gt; other[pos.y][pos.x] = value,
+);
+
+print(other); // =&gt; [[1, 2, 3], [4, 5, 6]]
+</code></pre>
+<h3 id="copy-a-sub-region-to-another-grid">Copy a sub-region to another grid</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+final other = [
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
+copyRect(
+  Rect.fromLTWH(1, 0, 2, 1),
+  (pos) =&gt; grid[pos.y][pos.x],
+  (pos, value) =&gt; other[pos.y][pos.x] = value,
+  target: Pos(1, 0),
+);
+
+print(other); // =&gt; [[0, 1, 2], [0, 0, 0]]
+</code></pre>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">void copyRect&lt;E&gt;(
+  Rect source,
+  E Function(Pos) get,
+  void Function(Pos, E) set, {
+  Pos target = Pos.zero,
+}) {
+  &#47;&#47; Set each element in the target grid.
+  &#47;&#47; Assuming the following:
+  &#47;&#47; 0 0 0 0
+  &#47;&#47; 0 0 1 2
+  &#47;&#47; 0 0 3 4
+  &#47;&#47;
+  &#47;&#47; Copying into:
+  &#47;&#47; 0 0
+  &#47;&#47; 0 0
+  &#47;&#47;
+  &#47;&#47; (2, 2) -&gt; (0, 0) if target is (0, 0)
+  final srcRect = source;
+
+  &#47;&#47; Translate and re-anchor the source rectangle to the target position.
+  final dstRect = Rect.fromTLBR(target, target + srcRect.size);
+
+  &#47;&#47; Iterate over each position in the source rectangle.
+  final srcIt = srcRect.positions.iterator;
+  final dstIt = dstRect.positions.iterator;
+  while (srcIt.moveNext() &amp;&amp; dstIt.moveNext()) {
+    set(dstIt.current, get(srcIt.current));
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">lodim</a></li>
+    <li><a href="../lodim/lodim-library.html">lodim</a></li>
+    <li class="self-crumb">copyRect&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+</ol>
+
+
+    <h5>lodim library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lodim
+      0.1.5
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

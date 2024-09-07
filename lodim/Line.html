@@ -30,7 +30,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">Line typedef</li>
+    <li class="self-crumb"><span class="deprecated">Line</span> typedef</li>
   </ol>
   <div class="self-name">Line</div>
   <form class="search navbar-right" role="search">
@@ -61,24 +61,27 @@
 </h1></div>
 
     <section class="multi-line-signature">
-        <span class="name ">Line</span> =
-     <span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-start"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">start</span>, </span><span class="parameter" id="param-end"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">end</span>, {</span><span class="parameter" id="param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span></span>})</span></span>
+        
+    <div>
+      <ol class="annotation-list">
+      <li>@<a href="https://api.dart.dev/stable/3.5.2/dart-core/Deprecated-class.html">Deprecated</a>(&#39;Use `Path` instead.&#39;)</li>
+    </ol>
+    </div><span class="name deprecated">Line</span> =
+     <span class="returntype"><a href="../lodim/Path.html">Path</a></span>
 
     </section>
 
     
 <section class="desc markdown">
-  <p>A function that returns positions along a line between <code>start</code> and <code>end</code>.</p>
-<p>Optionally, the line function can be configured with an <code>exclusive</code> flag
-to either conditionally include or exclude the <code>end</code> position. This flag
-is optional, and algorithms may choose to ignore it, so check the specific
-implementation for details.</p>
+  <p>A function that returns positions along a path between <code>start</code> and <code>end</code>.</p>
+<p><strong>Deprecated</strong>: Use <a href="../lodim/Path.html">Path</a> instead.</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef Line = Iterable&lt;Pos&gt; Function(Pos start, Pos end, {bool exclusive});</code></pre>
+  <pre class="language-dart"><code class="language-dart">@Deprecated(&#39;Use `Path` instead.&#39;)
+typedef Line = Path;</code></pre>
 </section>
 
 
@@ -95,7 +98,7 @@ implementation for details.</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">Line typedef</li>
+    <li class="self-crumb"><span class="deprecated">Line</span> typedef</li>
 </ol>
 
 
@@ -111,7 +114,7 @@ implementation for details.</p>
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

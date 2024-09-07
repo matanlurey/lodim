@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the chebyshev function from the lodim library, for the Dart programming language.">
-  <title>chebyshev function - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the getRect function from the lodim library, for the Dart programming language.">
+  <title>getRect function - lodim library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">chebyshev function</li>
+    <li class="self-crumb">getRect&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
   </ol>
-  <div class="self-name">chebyshev</div>
+  <div class="self-name">getRect</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -56,16 +56,17 @@
       data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-function">chebyshev</span> function 
+<h1><span class="kind-function">getRect&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
  
 </h1></div>
 
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/int-class.html">int</a></span>
-<span class="name ">chebyshev</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="chebyshev-param-a"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">a</span>, </span></li>
-<li><span class="parameter" id="chebyshev-param-b"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">b</span></span></li>
+<span class="returntype"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+<span class="name ">getRect</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getRect-param-bounds"><span class="type-annotation"><a href="../lodim/Rect-class.html">Rect</a></span> <span class="parameter-name">bounds</span>, </span></li>
+<li><span class="parameter" id="getRect-param-get"><span class="type-annotation">E</span> <span class="parameter-name">get</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span></li>
+</ol>)</span></li>
 </ol>)
 
         
@@ -73,15 +74,37 @@
     </section>
     
 <section class="desc markdown">
-  <p>Calculates the <a href="https://en.wikipedia.org/wiki/Chebyshev_distance">Chebyshev</a> distance between two positions.</p>
-<p>The Chebyshev distance is the maximum of the absolute differences of the
-horizontal and vertical offsets between two points in a 2D space, or
-<code>max(|x₂ - x₁|, |y₂ - y₁|)</code>. This is useful for calculating distances in
-a grid-based system, where diagonal movement <em>is</em> allowed.</p>
+  <p>Returns each element within <code>bounds</code>, exclusive of the bottom-right edge.</p>
+<p>The <code>get</code> function is called with each position within the bounds, and the
+return value is lazily yielded.</p>
+<p>It is the caller's responsibility to ensure that the bounds are valid or
+the behavior is undefined. This function is intended as a low-level utility
+for grid-like structures; consider asserting or clamping the bounds if
+necessary before calling this function.</p>
+<p>The result is in row-major order.</p>
 <h2 id="example">Example</h2>
-<pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
-final b = Pos(30, 40);
-print(a.distanceTo(b, chebyshev)); // =&gt; 20
+<p>For the below examples, we use a simple 2-dimensional list as the grid-like
+structure.</p>
+<p>Consider <a href="https://pub.dev/packages/sector"><code>package:sector</code></a> for a complete
+implementation.</p>
+<h3 id="all-elements-in-a-grid">All elements in a grid</h3>
+<pre class="language-dart"><code class="language-dart">final grid = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+final allElemennts = getRect(
+  Rect.fromWH(3, 2),
+  (pos) =&gt; grid[pos.y][pos.x],
+);
+print(allElemennts); // =&gt; [1, 2, 3, 4, 5, 6]
+</code></pre>
+<h3 id="sub-elements-in-a-grid">Sub-elements in a grid</h3>
+<pre class="language-dart"><code class="language-dart">final subElements = getRect(
+  Rect.fromLTWH(1, 0, 2, 1),
+  (pos) =&gt; grid[pos.y][pos.x],
+);
+print(subElements); // =&gt; [2, 3]
 </code></pre>
 </section>
 
@@ -89,10 +112,8 @@ print(a.distanceTo(b, chebyshev)); // =&gt; 20
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@pragma(&#39;vm:prefer-inline&#39;)
-int chebyshev(Pos a, Pos b) {
-  final delta = (a - b).abs();
-  return math.max(delta.x, delta.y);
+  <pre class="language-dart"><code class="language-dart">Iterable&lt;E&gt; getRect&lt;E&gt;(Rect bounds, E Function(Pos) get) {
+  return bounds.positions.map(get);
 }</code></pre>
 </section>
 
@@ -110,7 +131,7 @@ int chebyshev(Pos a, Pos b) {
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">chebyshev function</li>
+    <li class="self-crumb">getRect&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
 </ol>
 
 
@@ -126,7 +147,7 @@ int chebyshev(Pos a, Pos b) {
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

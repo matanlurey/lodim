@@ -63,8 +63,10 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.1/dart-core/int-class.html">int</a></span>&gt;</span></span>
-<span class="name ">toList</span>(<wbr>)
+<span class="returntype"><a href="https://api.dart.dev/stable/3.5.2/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span>&gt;</span></span>
+<span class="name ">toList</span>(<wbr>[<ol class="parameter-list single-line"> <li><span class="parameter" id="toList-param-output"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">output</span>, </span></li>
+<li><span class="parameter" id="toList-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span> = <span class="default-value">0</span></span></li>
+</ol>])
 
       
 
@@ -87,7 +89,19 @@ print(a.toList()); // =&gt; [10, 20]
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">List&lt;int&gt; toList() =&gt; [x, y];</code></pre>
+  <pre class="language-dart"><code class="language-dart">List&lt;int&gt; toList([List&lt;int&gt;? output, int index = 0]) {
+  if (output == null) {
+    if (index != 0) {
+      throw ArgumentError.value(
+        index,
+        &#39;index&#39;,
+        &#39;must be 0 if output is null&#39;,
+      );
+    }
+    return [x, y];
+  }
+  return _toListUnsafe(output, index);
+}</code></pre>
 </section>
 
 
@@ -121,7 +135,7 @@ print(a.toList()); // =&gt; [10, 20]
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

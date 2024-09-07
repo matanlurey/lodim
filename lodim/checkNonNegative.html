@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the bresenham function from the lodim library, for the Dart programming language.">
-  <title>bresenham function - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the checkNonNegative function from the lodim library, for the Dart programming language.">
+  <title>checkNonNegative function - lodim library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">bresenham function</li>
+    <li class="self-crumb">checkNonNegative function</li>
   </ol>
-  <div class="self-name">bresenham</div>
+  <div class="self-name">checkNonNegative</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -56,52 +56,40 @@
       data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-function">bresenham</span> function 
+<h1><span class="kind-function">checkNonNegative</span> function 
  
 </h1></div>
 
     <section class="multi-line-signature">
         
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../lodim/Pos-class.html">Pos</a></span>&gt;</span></span>
-<span class="name ">bresenham</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="bresenham-param-start"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">start</span>, </span></li>
-<li><span class="parameter" id="bresenham-param-end"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">end</span>, {</span></li>
-<li><span class="parameter" id="bresenham-param-exclusive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">exclusive</span> = <span class="default-value">false</span>, </span></li>
-</ol>})
+<span class="returntype"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span>
+<span class="name ">checkNonNegative</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="checkNonNegative-param-value"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">value</span>, [</span></li>
+<li><span class="parameter" id="checkNonNegative-param-name"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
+<li><span class="parameter" id="checkNonNegative-param-message"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span></span></li>
+</ol>])
 
         
 
     </section>
     
 <section class="desc markdown">
-  <p>Calculates positions along a line optimized for fixed-point math.</p>
-<p>This algorithm calculates the positions along a line between two points
-using the Bresenham's line algorithm, which rasterizes a line by plotting
-pixels between two points with no gaps or overlaps.</p>
-<h2 id="example">Example</h2>
-<p>By default (i.e. <code>exclusive = false</code>):</p>
-<pre class="language-dart"><code class="language-dart">final line = bresenham(Pos(0, 0), Pos(2, 2));
-print(line); // (0, 0), (1, 1), (2, 2)
-</code></pre>
-<p>When <code>exclusive = true</code>:</p>
-<pre class="language-dart"><code class="language-dart">final line = bresenham(Pos(0, 0), Pos(2, 2), exclusive: true);
-print(line); // (0, 0), (1, 1)
-</code></pre>
+  <p>Checks that an integer <code>value</code> is non-negative.</p>
+<p>Throws if the value is negative.</p>
+<p>If <code>name</code> or <code>message</code> are provided, they are used as the parameter name and
+message text of the thrown error. If <code>name</code> is omitted, it defaults to
+<code>index</code>.</p>
+<p>Returns <code>value</code> if it is non-negative.</p>
+<p>This method is identical to <a href="https://api.dart.dev/stable/3.5.2/dart-core/RangeError/checkNotNegative.html">RangeError.checkNotNegative</a> and is provided
+for consistency.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Iterable&lt;Pos&gt; bresenham(Pos start, Pos end, {bool exclusive = false}) {
-  final octant = Octant.from(start, end);
-  start = octant.toOctant1(start);
-  end = octant.toOctant1(end);
-
-  final delta = end - start;
-  final diff = delta.y - delta.x;
-  final endX = exclusive ? end.x : end.x + 1;
-  return _Bresenham(octant, delta, start, diff, endX);
+  <pre class="language-dart"><code class="language-dart">int checkNonNegative(int value, [String? name, String? message]) {
+  return RangeError.checkNotNegative(value, name ?? &#39;index&#39;, message);
 }</code></pre>
 </section>
 
@@ -119,7 +107,7 @@ print(line); // (0, 0), (1, 1)
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">bresenham function</li>
+    <li class="self-crumb">checkNonNegative function</li>
 </ol>
 
 
@@ -135,7 +123,7 @@ print(line); // (0, 0), (1, 1)
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   

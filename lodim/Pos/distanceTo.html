@@ -62,10 +62,15 @@
 
     <section class="multi-line-signature">
       
+  <div>
+    <ol class="annotation-list">
+        <li>@_pragmaInline</li>
+    </ol>
+  </div>
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.5.1/dart-core/int-class.html">int</a></span>
+<span class="returntype"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span>
 <span class="name ">distanceTo</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="distanceTo-param-other"><span class="type-annotation"><a href="../../lodim/Pos-class.html">Pos</a></span> <span class="parameter-name">other</span>, {</span></li>
-<li><span class="parameter" id="distanceTo-param-using"><span class="type-annotation"><a href="../../lodim/Distance.html">Distance</a></span> <span class="parameter-name">using</span> = <span class="default-value">euclideanSquared</span>, </span></li>
+<li><span class="parameter" id="distanceTo-param-using"><span class="type-annotation"><a href="../../lodim/Distance.html">Distance</a></span> <span class="parameter-name">using</span> = <span class="default-value">distanceSquared</span>, </span></li>
 </ol>})
 
       
@@ -74,9 +79,10 @@
     
 <section class="desc markdown">
   <p>Returns the distance between <code>this</code> and <code>other</code>.</p>
-<p>The default formula is <a href="../../lodim/euclideanSquared.html">euclideanSquared</a>, which produces a value useful
+<p>The default formula is <a href="../../lodim/distanceSquared-constant.html">distanceSquared</a>, which produces a value useful
 for distances that will be <em>compared</em>, but not used as an actual distance.
-See also <a href="../../lodim/manhattan.html">manhattan</a> and <a href="../../lodim/chebyshev.html">chebyshev</a>, or implement your own <a href="../../lodim/Distance.html">Distance</a>.</p>
+See also <a href="../../lodim/distanceManhattan-constant.html">distanceManhattan</a> and <a href="../../lodim/distanceChebyshev-constant.html">distanceChebyshev</a>, or implement your
+own <a href="../../lodim/Distance.html">Distance</a>.</p>
 <p>To sort positions by using distance from the origin, see <a href="../../lodim/Pos/byMagnitude.html">byMagnitude</a>.</p>
 <h2 id="example">Example</h2>
 <pre class="language-dart"><code class="language-dart">final a = Pos(10, 20);
@@ -89,8 +95,8 @@ print(a.distanceTo(b, using: euclideanSquared)); // =&gt; 500
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@pragma(&#39;vm:prefer-inline&#39;)
-int distanceTo(Pos other, {Distance using = euclideanSquared}) {
+  <pre class="language-dart"><code class="language-dart">@_pragmaInline
+int distanceTo(Pos other, {Distance using = distanceSquared}) {
   return using(this, other);
 }</code></pre>
 </section>
@@ -126,7 +132,7 @@ int distanceTo(Pos other, {Distance using = euclideanSquared}) {
 <footer>
   <span class="no-break">
     lodim
-      0.1.4
+      0.1.5
   </span>
 
   
