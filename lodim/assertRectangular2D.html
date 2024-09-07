@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the checkRectangular1d function from the lodim library, for the Dart programming language.">
-  <title>checkRectangular1d function - lodim library - Dart API</title>
+  <meta name="description" content="API docs for the assertRectangular2D function from the lodim library, for the Dart programming language.">
+  <title>assertRectangular2D function - lodim library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim.dart</a></li>
-    <li class="self-crumb">checkRectangular1d&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+    <li class="self-crumb">assertRectangular2D&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
   </ol>
-  <div class="self-name">checkRectangular1d</div>
+  <div class="self-name">assertRectangular2D</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -56,7 +56,7 @@
       data-above-sidebar="lodim&#47;lodim-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-function">checkRectangular1d&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
+<h1><span class="kind-function">assertRectangular2D&lt;<wbr><span class="type-parameter">E</span>&gt;</span> function 
  
 </h1></div>
 
@@ -64,21 +64,17 @@
         
 
 <span class="returntype">(<span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>, </span><span class="field"><span class="type-annotation"><a href="../lodim/Pos-class.html">Pos</a></span></span>)</span>
-<span class="name ">checkRectangular1d</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list"> <li><span class="parameter" id="checkRectangular1d-param-cells"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">cells</span>, {</span></li>
-<li><span class="parameter" id="checkRectangular1d-param-width"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a></span> <span class="parameter-name">width</span>, </span></li>
-<li><span class="parameter" id="checkRectangular1d-param-height"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">height</span>, </span></li>
-</ol>})
+<span class="name ">assertRectangular2D</span>&lt;<wbr><span class="type-parameter">E</span>&gt;(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="assertRectangular2D-param-rows"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.2/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">rows</span></span></li>
+</ol>)
 
         
 
     </section>
     
 <section class="desc markdown">
-  <p>Checks that <code>cells</code> is a non-empty iterable and that it is rectangular.</p>
-<p>A rectangular 1-dimensional iterable has a length that is a multiple of
-<code>width</code>, and if provided, <code>height</code> (if height is omitted, it defaults to
-<code>cells.length ~/ width</code>).</p>
-<p>Throws if the iterable is not rectangular or if it is empty (has no cells).</p>
+  <p>Checks that the provided iterable of <code>rows</code> is rectangular and non-empty.</p>
+<p>If <code>assertions</code> are enabled, throws if the iterable is not rectangular or
+if it is empty (has no rows).</p>
 <p>Returns the iterable and dimensions of the rectangle if it is rectangular.</p>
 </section>
 
@@ -86,17 +82,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">(Iterable&lt;E&gt;, Pos) checkRectangular1d&lt;E&gt;(
-  Iterable&lt;E&gt; cells, {
-  required int width,
-  int? height,
-}) {
-  return _checkRectangular1d(
-    cells,
-    check: true,
-    width: width,
-    height: height,
-  );
+  <pre class="language-dart"><code class="language-dart">(Iterable&lt;E&gt;, Pos) assertRectangular2D&lt;E&gt;(Iterable&lt;Iterable&lt;E&gt;&gt; rows) {
+  return _checkRectangular2D(rows, check: _assertionsEnabled);
 }</code></pre>
 </section>
 
@@ -114,7 +101,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">lodim</a></li>
     <li><a href="../lodim/lodim-library.html">lodim</a></li>
-    <li class="self-crumb">checkRectangular1d&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
+    <li class="self-crumb">assertRectangular2D&lt;<wbr><span class="type-parameter">E</span>&gt; function</li>
 </ol>
 
 
@@ -130,7 +117,7 @@
 <footer>
   <span class="no-break">
     lodim
-      0.1.6
+      0.1.6+1
   </span>
 
   
