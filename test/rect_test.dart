@@ -247,6 +247,11 @@ void main() {
       ]);
     });
 
+    test('returns a 1x1 rect', () {
+      final rect = Rect.fromLTWH(0, 0, 1, 1);
+      check(rect.positions).deepEquals([Pos(0, 0)]);
+    });
+
     test('returns no positions for an empty rect', () {
       final rect = Rect.fromLTWH(0, 0, 0, 0);
       check(rect.positions).deepEquals([]);

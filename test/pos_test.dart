@@ -37,15 +37,15 @@ void main() {
     test('can specify an alternate distance function', () {
       final a = Pos(10, 20);
       final b = Pos(30, 40);
-      check(a.distanceTo(b, using: manhattan)).equals(40);
+      check(a.distanceTo(b, using: distanceManhattan)).equals(40);
     });
   });
 
-  group('lineTo', () {
+  group('pathTo', () {
     test('defaults to bresenham', () {
       final a = Pos(0, 0);
       final b = Pos(2, 2);
-      check(a.lineTo(b)).deepEquals([
+      check(a.pathTo(b)).deepEquals([
         Pos(0, 0),
         Pos(1, 1),
         Pos(2, 2),
@@ -61,7 +61,7 @@ void main() {
         yield b;
       }
 
-      check(a.lineTo(b, using: fakeLine)).deepEquals([
+      check(a.pathTo(b, using: fakeLine)).deepEquals([
         a,
         b,
       ]);
@@ -333,6 +333,8 @@ void main() {
   });
 
   test('toPos', () {
+    // Test the deprecated method.
+    // ignore: deprecated_member_use_from_same_package
     check((1, 2).toPos()).equals(Pos(1, 2));
   });
 }
