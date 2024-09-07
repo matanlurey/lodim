@@ -295,6 +295,7 @@ final class Pos {
   /// Returns an iterable of positions that draws a line from `this` to [other].
   ///
   /// **Deprecated**: Use [pathTo] instead.
+  // coverage:ignore-start
   @Deprecated('Use `pathTo` instead.')
   Iterable<Pos> lineTo(
     Pos other, {
@@ -303,6 +304,7 @@ final class Pos {
   }) {
     return pathTo(other, using: using, exclusive: exclusive);
   }
+  // coverage:ignore-end
 
   /// Returns the middle positions between `this` and [other].
   ///
